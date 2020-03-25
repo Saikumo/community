@@ -1,18 +1,18 @@
 package me.saikumo.community.model;
 
 public class User {
-    private int id;
+    private Integer id;
     private String name;
     private String accountId;
     private String token;
-    private long gmtCreate;
-    private long gmtModified;
+    private Long gmtCreate;
+    private Long gmtModified;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -40,19 +40,19 @@ public class User {
         this.token = token;
     }
 
-    public long getGmtCreate() {
+    public Long getGmtCreate() {
         return gmtCreate;
     }
 
-    public void setGmtCreate(long gmtCreate) {
+    public void setGmtCreate(Long gmtCreate) {
         this.gmtCreate = gmtCreate;
     }
 
-    public long getGmtModified() {
+    public Long getGmtModified() {
         return gmtModified;
     }
 
-    public void setGmtModified(long gmtModified) {
+    public void setGmtModified(Long gmtModified) {
         this.gmtModified = gmtModified;
     }
 }
