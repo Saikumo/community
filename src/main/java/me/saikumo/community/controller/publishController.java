@@ -73,7 +73,7 @@ public class publishController {
 
         Question question = new Question();
         question.setTitle(title);
-        question.setDesciption(description);
+        question.setDescription(description);
         question.setTag(tag);
         question.setCreator(user.getId());
         question.setGmtCreate(System.currentTimeMillis());
