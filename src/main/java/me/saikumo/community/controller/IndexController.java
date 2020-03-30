@@ -1,5 +1,6 @@
 package me.saikumo.community.controller;
 
+import me.saikumo.community.dto.PaginationDTO;
 import me.saikumo.community.dto.QuestionDTO;
 import me.saikumo.community.mapper.QuestionMapper;
 import me.saikumo.community.mapper.UserMapper;
@@ -27,7 +28,9 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(HttpServletRequest request,
-                        Model model){
+                        Model model,
+                        @RequestParam(name="page",defaultValue ="1")Integer page,
+                        @RequestParam(name="size",defaultValue ="5")Integer size){
         Cookie[] cookies = request.getCookies();
         if(cookies != null){
             for(Cookie cookie: cookies){
@@ -42,8 +45,8 @@ public class IndexController {
             }
         }
 
-        List<QuestionDTO> questionList = questionService.list();
-        model.addAttribute("questions",questionList);
+        PaginationDTO pagination = questionService.list(page,size);
+        model.addAttribute("pagination",pagination);
         return "index";
     }
 }
